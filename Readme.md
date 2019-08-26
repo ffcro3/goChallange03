@@ -1,13 +1,25 @@
-# BASE PARA CRIAÇÃO DE PROJETOS EM NODEJS.
+# Go Stack - Desafio 02. Iniciando aplicação
 
-## Usage
+```
+Crie uma aplicação do zero utilizando Express.
+
+Nessa aplicação configure as seguintes ferramentas:
+
+Sucrase + Nodemon;
+ESLint + Prettier + EditorConfig;
+Sequelize (Utilize PostgresSQL ou MySQL);
+
+```
+
+### Topics
 
 * Criar uma aplicação do zero.
-* Nodemon configurado.
-* Sucrase configurado.
-* ESLint configurado.
-* Prettier configurado.
-* EditorConfig configurado.
-* Sequelize Configurado (ORM).
+* Autenticação com JWT.
+* Validação de dados.
+* Cadastro de usuários
+* Atualização de usuários.
 
-Baseado na GoStack (modulo02)
+
+#### Keep in mind this is a WIP.
+
+Aplicação em NodeJS para estudos.
