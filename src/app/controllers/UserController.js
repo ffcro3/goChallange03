@@ -3,7 +3,11 @@ import User from '../models/User';
 class UserController {
   //  METHOD TO CREATE A NEW USER
   async store(req, res) {
-    const UserExists = req.body.email;
+    const UserExists = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
 
     if (UserExists) {
       return res.status(400).json({
