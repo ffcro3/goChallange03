@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 
