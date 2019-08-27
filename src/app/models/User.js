@@ -19,7 +19,7 @@ class User extends Model {
     // HOOKS IS USED ONCE WE NEED TO DO SOMETHING BEFORE OR AFTER THE DB NEEDS
     this.addHook('beforeSave', async user => {
       if (user.password) {
-        user.password_hash = await bcrypt.hash(user.password, 8);
+        user.password = await bcrypt.hash(user.password, 8);
       }
     });
 
@@ -28,7 +28,7 @@ class User extends Model {
 
   // METHOD TO CHECK IF THE CRYPTOGRAPHY IS THE SAME THAT REGISTRED IN DB
   checkPassword(password) {
-    return bcrypt.compare(password, this.password_hash);
+    return bcrypt.compare(password, this.password);
   }
 }
 
