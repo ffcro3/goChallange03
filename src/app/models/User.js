@@ -8,8 +8,8 @@ class User extends Model {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password: Sequelize.STRING,
-        user_type: Sequelize.STRING,
-        imagem_usuario: Sequelize.STRING,
+        userType: Sequelize.STRING,
+        imagemUsuario: Sequelize.STRING,
         active: Sequelize.BOOLEAN,
       },
       {
@@ -19,7 +19,7 @@ class User extends Model {
     // HOOKS IS USED ONCE WE NEED TO DO SOMETHING BEFORE OR AFTER THE DB NEEDS
     this.addHook('beforeSave', async user => {
       if (user.password) {
-        user.password_hash = await bcrypt.hash(user.password, 8);
+        user.password = await bcrypt.hash(user.password, 8);
       }
     });
 
@@ -28,7 +28,7 @@ class User extends Model {
 
   // METHOD TO CHECK IF THE CRYPTOGRAPHY IS THE SAME THAT REGISTRED IN DB
   checkPassword(password) {
-    return bcrypt.compare(password, this.password_hash);
+    return bcrypt.compare(password, this.password);
   }
 }
 
