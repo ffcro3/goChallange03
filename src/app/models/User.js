@@ -8,8 +8,8 @@ class User extends Model {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password: Sequelize.STRING,
-        user_type: Sequelize.STRING,
-        imagem_usuario: Sequelize.STRING,
+        userType: Sequelize.STRING,
+        imagemUsuario: Sequelize.STRING,
         active: Sequelize.BOOLEAN,
       },
       {
