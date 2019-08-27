@@ -13,10 +13,10 @@ Sequelize (Utilize PostgresSQL ou MySQL);
 
 ### Topics
 
-* Criar uma aplicação do zero.
-* Autenticação com JWT.
+* Criar uma aplicação do zero. :heavy_check_mark:
+* Autenticação com JWT. :heavy_check_mark:
 * Validação de dados.
-* Cadastro de usuários
+* Cadastro de usuários :heavy_check_mark:
 * Atualização de usuários.
 
 
