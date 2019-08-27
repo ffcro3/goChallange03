@@ -17,7 +17,7 @@ Sequelize (Utilize PostgresSQL ou MySQL);
 * Autenticação com JWT. :heavy_check_mark:
 * Validação de dados.
 * Cadastro de usuários :heavy_check_mark:
-* Atualização de usuários.
+* Atualização de usuários. :heavy_check_mark:
 
 
 #### Keep in mind this is a WIP.
