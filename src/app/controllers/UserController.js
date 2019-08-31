@@ -1,8 +1,26 @@
+import * as Yup from 'yup';
 import User from '../models/User';
 
 class UserController {
   //  METHOD TO CREATE A NEW USER
   async store(req, res) {
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      email: Yup.string()
+        .email()
+        .required(),
+      password: Yup.string()
+        .required()
+        .min(6),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({
+        error:
+          'Name, Email and password are requireds. Please check any values in theses fields and try again.',
+      });
+    }
+
     const UserExists = await User.findOne({
       where: {
         email: req.body.email,
@@ -26,6 +44,24 @@ class UserController {
   }
 
   async update(req, res) {
+    const schema = Yup.object().shape({
+      name: Yup.string(),
+      email: Yup.string().email(),
+      oldPassword: Yup.string().min(6),
+      password: Yup.string().when('oldPassword', (oldPassword, field) =>
+        oldPassword ? field.required() : field
+      ),
+      confirmPassword: Yup.string().when('password', (password, field) =>
+        password ? field.required().oneOf([Yup.ref('password')]) : field
+      ),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({
+        error: 'Validation Failed. Please, check the fields and try again.',
+      });
+    }
+
     const { email, oldPassword } = req.body;
 
     // FIND THE USER TO MAKE THE ID AVAILABLE TO UPDATE
