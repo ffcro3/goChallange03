@@ -45,4 +45,5 @@ Para atualizar a senha, o usuário deve também enviar um campo de confirmação
 
 #### Keep in mind this is a WIP.
 
-Aplicação em NodeJS para estudos.
+- Aplicação em NodeJS para estudos.
+- Link para o desafio do curso referente a essa aplicação: <https://github.com/Rocketseat/bootcamp-gostack-desafio-02>
