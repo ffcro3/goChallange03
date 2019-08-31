@@ -15,7 +15,7 @@ class SessionController {
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({
         error:
-          'Email and password are requireds. Please chekc these fields and try again',
+          'Email and password are requireds. Please check these fields and try again',
       });
     }
 
