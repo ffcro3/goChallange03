@@ -8,17 +8,15 @@
 
 </p>
 
-
 <h2  align="center">MeetApp - Iniciando aplicação</h2>
 
-
 ---
+
 > **GoStack 8.0**: Aplicação desenvolvida com base nos estudos adquiridos no Bootcamp GoStack 8.0. Crie uma aplicação do zero utilizando Express.
+
 ---
 
-
-# Desafio 02.
-
+# Desafio 03.
 
 ```
 
@@ -37,73 +35,61 @@ Sequelize (Utilize PostgresSQL ou MySQL);
 
 ## Aplicação
 
-
-
-A aplicação que iremos dar início ao desenvolvimento a partir de agora é um app agregador de eventos para desenvolvedores chamado Meetapp (um acrônimo à Meetup + App).
-
-
+Durante esse desafio vamos aprimorar a aplicação Meetapp que demos início no desafio anterior implementando funcionalidades que aprendemos durante as aulas até agora.
 
 ## Funcionalidades
 
-
-
 Abaixo estão descritas as funcionalidades que você deve adicionar em sua aplicação.
 
+### Gerenciamento de arquivos
 
+- Crie uma rota para upload de arquivos que cadastra em uma tabela o caminho e nome do arquivo e retorna todos dados do arquivo cadastrado.
 
-### Autenticação
+### Gerenciamento de meetups
 
+- O usuário pode cadastrar meetups na plataforma com título do meetup, descrição, localização, data e hora e imagem (banner). Todos campos são obrigatórios. Adicione também um campo user_id que armazena o ID do usuário que organiza o evento.
 
+- Não deve ser possível cadastrar meetups com datas que já passaram.
 
-Permita que um usuário se autentique em sua aplicação utilizando e-mail e senha.
+- O usuário também deve poder editar todos dados de meetups que ainda não aconteceram e que ele é organizador.
 
+- Crie uma rota para listar os meetups que são organizados pelo usuário logado.
 
+- O usuário deve poder cancelar meetups organizados por ele e que ainda não aconteceram. O cancelamento deve deletar o meetup da base de dados.
 
-- A autenticação deve ser feita utilizando JWT.
+### Inscrição no meetup
 
-- Realize a validação dos dados de entrada;
+- O usuário deve poder se inscrever em meetups que não organiza.
 
+- O usuário não pode se inscrever em meetups que já aconteceram.
 
+- O usuário não pode se inscrever no mesmo meetup duas vezes.
 
-### Cadastro e atualização de usuários
+- O usuário não pode se inscrever em dois meetups que acontecem no mesmo horário.
 
+- Sempre que um usuário se inscrever no meetup, envie um e-mail ao organizador contendo os dados relacionados ao usuário inscrito. O template do e-mail fica por sua conta :)
 
+### Listagem de meetups
 
-Permita que novos usuários se cadastrem em sua aplicação utilizando nome, e-mail e senha.
+- Crie uma rota para listar os meetups com filtro por data (não por hora), os resultados dessa listagem devem vir paginados em 10 itens por página. Abaixo tem um exemplo de chamada para a rota de listagem dos meetups:
 
+```
+http://localhost:3333/meetups?date=2019-07-01&page=2
 
+```
 
-Para atualizar a senha, o usuário deve também enviar um campo de confirmação com a mesma senha.
+Nesse exemplo, listaremos a página 2 dos meetups que acontecerão no dia 01 de Julho.
 
+Nessa listagem retorne também os dados do organizador.
 
+### Listagem de inscrições
 
-- Criptografe a senha do usuário para segurança.
+- Crie uma rota para listar os meetups em que o usuário logado está inscrito.
 
-- Realize a validação dos dados de entrada;
-
-
-
-### Topics
-
-
-
-* Criar uma aplicação do zero. :heavy_check_mark:
-
-* Autenticação com JWT. :heavy_check_mark:
-
-* Validação de dados. :heavy_check_mark:
-
-* Cadastro de usuários :heavy_check_mark:
-
-* Atualização de usuários. :heavy_check_mark:
-
-
-
+- Liste apenas meetups que ainda não passaram e ordene meetups mais próximos como primeiros da lista.
 
 #### Keep in mind this is a WIP.
 
-
-
 - Aplicação em NodeJS para estudos.
 
-- Link para o desafio do curso referente a essa aplicação: <https://github.com/Rocketseat/bootcamp-gostack-desafio-02>
+- Link para o desafio do curso referente a essa aplicação: <https://github.com/Rocketseat/bootcamp-gostack-desafio-03>
