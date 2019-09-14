@@ -8,7 +8,7 @@
 
 </p>
 
-<h2  align="center">MeetApp - Iniciando aplicação</h2>
+<h2  align="center">MeetApp - Continuando aplicação</h2>
 
 ---
 
