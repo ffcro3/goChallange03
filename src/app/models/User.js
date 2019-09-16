@@ -9,7 +9,6 @@ class User extends Model {
         email: Sequelize.STRING,
         password: Sequelize.STRING,
         userType: Sequelize.STRING,
-        imagemUsuario: Sequelize.STRING,
         active: Sequelize.BOOLEAN,
       },
       {
@@ -24,6 +23,11 @@ class User extends Model {
     });
 
     return this;
+  }
+
+  // RELATINSHIP WITH FILES (AVATAR_ID)
+  static associate(models) {
+    this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
   }
 
   // METHOD TO CHECK IF THE CRYPTOGRAPHY IS THE SAME THAT REGISTRED IN DB
